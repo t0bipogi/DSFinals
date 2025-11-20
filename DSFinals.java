@@ -38,7 +38,7 @@ public class DSFinals {
                         menuLinkedList(myLinkedList);
                         break;
                     case 3:
-                        System.out.println("Feature coming soon...");
+                        menuStack(myStack);
                         break;
                     case 4:
                         System.out.println("Feature coming soon...");
@@ -207,6 +207,41 @@ public class DSFinals {
                     list.clear();
                     break;
                 case 7:
+                    back = true;
+                    break;
+            }
+        }
+    }
+
+    public static void menuStack(Stack<Integer> stack) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- STACK OPERATIONS ---");
+            System.out.println("Current: " + stack);
+            System.out.println("1. Push (Add)");
+            System.out.println("2. Search (Manual)");
+            System.out.println("3. Sort (Manual)");
+            System.out.println("4. Clear");
+            System.out.println("5. Back");
+            System.out.print("Action: ");
+
+            int action = scan.nextInt();
+            switch (action) {
+                case 1:
+                    System.out.print("Value: ");
+                    stack.push(scan.nextInt());
+                    break;
+                case 2:
+                    System.out.print("Search Value: ");
+                    manualSearch(stack, scan.nextInt());
+                    break;
+                case 3:
+                    manualSortStack(stack);
+                    break;
+                case 4:
+                    stack.clear();
+                    break;
+                case 5:
                     back = true;
                     break;
             }
