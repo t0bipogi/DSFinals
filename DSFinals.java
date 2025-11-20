@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Scanner;
 import java.util.Stack;
 import java.util.TreeSet;
-import java.util.Scanner;
 
 public class DSFinals {
 
@@ -41,10 +41,10 @@ public class DSFinals {
                         menuStack(myStack);
                         break;
                     case 4:
-                        System.out.println("Feature coming soon...");
+                        menuQueue(myQueue);
                         break;
                     case 5:
-                        System.out.println("Feature coming soon...");
+                        menuTree(myTree);
                         break;
                     case 6:
                         running = false;
@@ -242,6 +242,72 @@ public class DSFinals {
                     stack.clear();
                     break;
                 case 5:
+                    back = true;
+                    break;
+            }
+        }
+    }
+    public static void menuQueue(LinkedList<Integer> queue) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- QUEUE OPERATIONS ---");
+            System.out.println("Current: " + queue);
+            System.out.println("1. Enqueue (Add)");
+            System.out.println("2. Search (Manual)");
+            System.out.println("3. Sort (Manual)");
+            System.out.println("4. Clear");
+            System.out.println("5. Back");
+            System.out.print("Action: ");
+
+            int action = scan.nextInt();
+            switch (action) {
+                case 1:
+                    System.out.print("Value: ");
+                    queue.offer(scan.nextInt());
+                    break;
+                case 2:
+                    System.out.print("Search Value: ");
+                    manualSearch(queue, scan.nextInt());
+                    break;
+                case 3:
+                    manualSortLinkedList(queue);
+                    break;
+                case 4:
+                    queue.clear();
+                    break;
+                case 5:
+                    back = true;
+                    break;
+            }
+        }
+    }
+
+    public static void menuTree(TreeSet<Integer> tree) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- TREE OPERATIONS ---");
+            System.out.println("Current (Auto-Sorted): " + tree);
+            System.out.println("1. Add Node");
+            System.out.println("2. Search (Manual)");
+            System.out.println("3. Clear");
+            System.out.println("4. Back");
+            System.out.print("Action: ");
+
+            int action = scan.nextInt();
+            switch (action) {
+                case 1:
+                    System.out.print("Value: ");
+                    tree.add(scan.nextInt());
+                    break;
+                case 2:
+                    System.out.print("Search Value: ");
+                    int searchVal = scan.nextInt(); 
+                    manualSearch(tree, searchVal);
+                    break;
+                case 3:
+                    tree.clear();
+                    break;
+                case 4:
                     back = true;
                     break;
             }
